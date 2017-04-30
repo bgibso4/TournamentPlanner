@@ -1,6 +1,7 @@
 package com.example.luke.tournamentplanner;
 
 import android.content.Intent;
+import android.provider.Settings;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
@@ -24,8 +25,7 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v){
                 Intent intent = new Intent(MainActivity.this, NamingTeams.class);
                 EditText numPlayers = (EditText)findViewById(R.id.numPlayers);
-                String message = numPlayers.getText().toString();
-                intent.putExtra(EXTRA_MESSAGE, message);
+                intent.putExtra(EXTRA_MESSAGE, numPlayers.getText().toString());
                 startActivity(intent);
             }
         });

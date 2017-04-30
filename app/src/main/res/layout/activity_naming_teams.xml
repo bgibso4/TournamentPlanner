@@ -10,80 +10,46 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.example.luke.tournamentplanner.NamingTeams">
 
-    <EditText
-        android:id="@+id/name"
-        android:layout_width="fill_parent"
-        android:layout_height="wrap_content"
-        android:hint="Team Name"
-        android:inputType="text"
-        android:imeOptions="actionSend"
-        android:layout_below="@+id/textView"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:fontFamily="sans-serif" />
-
     <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
-        android:textSize="24sp"
-        android:layout_marginRight="13dp"
-        android:layout_marginEnd="13dp"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true" />
-
-    <TextView
-        android:text="Number Participating "
+        android:text="Number Participating:  "
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textView2"
+        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+        android:textSize="24sp"
         android:layout_alignParentTop="true"
         android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
+        android:layout_alignParentStart="true" />
+
+    <TextView
+        android:text="TextView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignBottom="@+id/textView2"
+        android:layout_toRightOf="@+id/textView2"
+        android:layout_toEndOf="@+id/textView2"
+        android:id="@+id/players"
         android:textAppearance="@style/TextAppearance.AppCompat.Body1"
         android:textSize="24sp" />
 
     <ListView
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
         android:id="@+id/list"
-        android:layout_below="@+id/name"
-        android:layout_above="@+id/OK" />
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_below="@+id/name" />
 
     <EditText
-        android:layout_height="wrap_content"
-        android:inputType="number"
-        android:ems="10"
-        android:id="@+id/teamNum"
-        android:hint="Team Num"
-        android:layout_alignParentBottom="true"
-        android:layout_toLeftOf="@+id/OK"
-        android:layout_toStartOf="@+id/OK"
-        android:layout_marginRight="10dp"
-        android:layout_marginEnd="10dp"
-        android:layout_width="100dp" />
-
-    <Button
-        android:text="OK"
-        android:layout_height="wrap_content"
-        android:id="@+id/OK"
-        android:layout_width="60dp"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentRight="true"
-        android:layout_alignParentEnd="true"
-        android:layout_alignTop="@+id/teamNum" />
-
-    <EditText
-        android:layout_height="wrap_content"
-        android:inputType="textPersonName"
-        android:ems="10"
-        android:id="@+id/editedTeam"
-        android:hint="Edit Team"
-        android:layout_width="150dp"
-        android:layout_alignParentBottom="true"
+        android:id="@+id/name"
+        android:layout_width="match_parent"
+        android:hint="Team Name"
+        android:inputType="text"
+        android:imeOptions="actionSend"
+        android:fontFamily="sans-serif"
+        android:textSize="18sp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/textView2"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
 

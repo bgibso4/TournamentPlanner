@@ -21,14 +21,20 @@ public class Participant {
         this.pointsAgainst += pointsAgainst;
     }
 
-    public String toSttring(){
+    public void setName(String name){
+        this.name = name;
+    }
+
+    public String getName(){
+        return name;
+    }
+
+    public String toString(){
         return "[" + name + ": " + Integer.toString(pointsFor) + ": "
                 + Integer.toString(pointsAgainst) + " ]";
     }
 
-    public void setName(String name){
-        this.name = name;
-    }
+
 
     @TargetApi(24)
     public int hashCode(){
