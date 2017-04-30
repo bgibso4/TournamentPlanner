@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">TournamentPlanner</string>
+    <string name="number_players">Enter the number of players</string>
+    <string name="button_send">Enter</string>
+</resources>
