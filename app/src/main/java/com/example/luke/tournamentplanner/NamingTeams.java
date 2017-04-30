@@ -11,11 +11,14 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
 import android.widget.Adapter;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -23,7 +26,6 @@ import java.util.List;
 public class NamingTeams extends AppCompatActivity {
 
     private ArrayList<Participant> teams = new ArrayList<>();
-    private List<String> teamNames = new ArrayList<>();
     private ListView list;
     private Adapter MyAdapter;
 
@@ -62,14 +64,15 @@ public class NamingTeams extends AppCompatActivity {
             private void sendMessage() {
                 if (teams.size() != capacity) {
                     teams.add(new Participant(editText.getText().toString()));
-                    //teamNames.add("Team " + teams.size() + ": " + editText.getText().toString());
                     editText.getText().clear();
                 } else {
-                    editText.setText("Number of specified teams reached");
+                    editText.getText().clear();
+                    editText.setHint("Number of specified teams reached");
                 }
             }
 
         });
+
 
         //need to send the list of teams participating to the tournament scheduler
         
@@ -93,8 +96,23 @@ public class NamingTeams extends AppCompatActivity {
             if (convertView == null) {
                 convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_user, parent, false);
             }
+            //getting the name form the editText and initializing it to the textVIew
             TextView teamName = (TextView) convertView.findViewById(R.id.name);
             teamName.setText(player.getName());
+
+            Button btnDelete = (Button)convertView.findViewById(R.id.delete);
+            //storign the specific player with respect to its designated delete button
+            btnDelete.setTag(player);
+            btnDelete.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    //instead of editting an entry I will simply support the
+                    //deletion of a team to allow for the correct team name to be passed
+                    teams.remove(view.getTag());
+                    //receiving the updates 
+                    notifyDataSetChanged();
+                }
+            });
             return convertView;
         }
     }
