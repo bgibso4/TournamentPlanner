@@ -21,11 +21,12 @@ public class Game {
     }
 
     public void setScore(int team1Score, int team2Score){
-//        team1Points= team1Score;
-//        team2Points= team2Score;
-        team1.setScore(team1Score, team2Score);
-        team2.setScore(team2Score, team1Score);
-        differential= team1Score- team2Score;
+        if(team2!=null){
+            team1.setScore(team1Score, team2Score);
+            team2.setScore(team2Score, team1Score);
+            differential= team1Score- team2Score;
+        }
+
     }
 
     public int getDifferential(){
@@ -33,17 +34,17 @@ public class Game {
     }
 
     public Participant getWinner(){
-        if (getDifferential()<0){
-            return team2;
-        }
-        return team1;
-    }
-
-    public Participant getLoser(){
-        if (getDifferential()<0){
+        if (getDifferential()>0 || team2==null){
             return team1;
         }
         return team2;
+    }
+
+    public Participant getLoser(){
+        if (getDifferential()>0 || team2==null){
+            return team2;
+        }
+        return team1;
     }
 
     public String toString(){
