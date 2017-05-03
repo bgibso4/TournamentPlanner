@@ -27,7 +27,7 @@ public class NamingTeams extends AppCompatActivity {
 
     private ArrayList<Participant> teams = new ArrayList<>();
     private ListView list;
-    private Adapter MyAdapter;
+    public static final String EXTRA_MESSAGE = "com.example.luke.tournamentplanner.MESSAGE";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -73,6 +73,25 @@ public class NamingTeams extends AppCompatActivity {
 
         });
 
+        //creating the confirmation button at the bottom of the screen
+        Button confirmBtn = (Button)findViewById(R.id.confirmButton);
+        confirmBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //creating a toast(reminder) if the user clicks the button before entering all the teams
+                if(teams.size()!=capacity){
+                    Toast.makeText(getApplicationContext(),"Please enter the correct number of teams", Toast.LENGTH_LONG).show();
+                }
+                else{
+
+                }
+
+                //receiving the updates
+                //notifyDataSetChanged();
+            }
+        });
+
+
 
         //need to send the list of teams participating to the tournament scheduler
         
@@ -101,7 +120,7 @@ public class NamingTeams extends AppCompatActivity {
             teamName.setText(player.getName());
 
             Button btnDelete = (Button)convertView.findViewById(R.id.delete);
-            //storign the specific player with respect to its designated delete button
+            //storing the specific player with respect to its designated delete button
             btnDelete.setTag(player);
             btnDelete.setOnClickListener(new View.OnClickListener() {
                 @Override
