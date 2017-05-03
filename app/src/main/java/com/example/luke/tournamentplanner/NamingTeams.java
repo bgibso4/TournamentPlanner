@@ -73,7 +73,8 @@ public class NamingTeams extends AppCompatActivity {
 
         });
 
-
+        //adding a continue button and only proceeds if the nunber of players matches the
+        //selected choice
         //need to send the list of teams participating to the tournament scheduler
         
     }
@@ -109,7 +110,7 @@ public class NamingTeams extends AppCompatActivity {
                     //instead of editting an entry I will simply support the
                     //deletion of a team to allow for the correct team name to be passed
                     teams.remove(view.getTag());
-                    //receiving the updates 
+                    //receiving the updates
                     notifyDataSetChanged();
                 }
             });
