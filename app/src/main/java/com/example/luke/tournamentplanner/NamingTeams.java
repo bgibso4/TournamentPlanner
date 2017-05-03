@@ -67,18 +67,15 @@ public class NamingTeams extends AppCompatActivity {
                     editText.getText().clear();
                 } else {
                     editText.getText().clear();
-                    editText.setHint("Number of specified teams reached");
+                    Toast.makeText(getApplicationContext(),"Capactiy reached!", Toast.LENGTH_LONG).show();
                 }
             }
 
         });
 
-<<<<<<< HEAD
-        //adding a continue button and only proceeds if the nunber of players matches the
-        //selected choice
-=======
+
         //creating the confirmation button at the bottom of the screen
-        Button confirmBtn = (Button)findViewById(R.id.confirmButton);
+        Button confirmBtn = (Button)findViewById(R.id.next);
         confirmBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -87,7 +84,8 @@ public class NamingTeams extends AppCompatActivity {
                     Toast.makeText(getApplicationContext(),"Please enter the correct number of teams", Toast.LENGTH_LONG).show();
                 }
                 else{
-
+                    Intent intent = new Intent(NamingTeams.this, bracket.class);
+                    startActivity(intent);
                 }
 
                 //receiving the updates
@@ -97,7 +95,7 @@ public class NamingTeams extends AppCompatActivity {
 
 
 
->>>>>>> 7a01b868f1f146799634ded846f0c281ef9c5f4b
+//>>>>>>> 7a01b868f1f146799634ded846f0c281ef9c5f4b
         //need to send the list of teams participating to the tournament scheduler
         
     }

@@ -6,7 +6,7 @@ import android.annotation.TargetApi;
  * Created by luke on 2017-04-19.
  */
 
-public class Participant {
+public class Participant{
     private int pointsFor, pointsAgainst;
     private String name;
 
@@ -36,9 +36,9 @@ public class Participant {
 
 
 
-    @TargetApi(24)
-    public int hashCode(){
-        return 31*(31*name.hashCode() + Integer.hashCode(pointsAgainst)) + Integer.hashCode(pointsFor);
-    }
+//    @TargetApi(24)
+//    public int hashCode(){
+//        return 31*(31*name.hashCode() + Integer.hashCode(pointsAgainst)) + Integer.hashCode(pointsFor);
+//    }
 
 }
