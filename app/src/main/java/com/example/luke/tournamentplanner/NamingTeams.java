@@ -85,6 +85,7 @@ public class NamingTeams extends AppCompatActivity {
                 }
                 else{
                     Intent intent = new Intent(NamingTeams.this, bracket.class);
+                    intent.putExtra("Tournament_Teams", teams);
                     startActivity(intent);
                 }
 
@@ -95,8 +96,6 @@ public class NamingTeams extends AppCompatActivity {
 
 
 
-//>>>>>>> 7a01b868f1f146799634ded846f0c281ef9c5f4b
-        //need to send the list of teams participating to the tournament scheduler
         
     }
 
