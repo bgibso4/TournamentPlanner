@@ -7,6 +7,7 @@ import android.view.View;
 import android.widget.Adapter;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.Spinner;
 import android.widget.Toast;
 
@@ -32,6 +33,31 @@ public class bracket extends AppCompatActivity implements AdapterView.OnItemSele
 
         options = (Spinner) findViewById(R.id.options);
         options.setOnItemSelectedListener(this);
+
+
+        //creating a button that will allow for the creation of the specified tournament type
+        //****Needs to be filled in when the other type have been created*****
+        Button confirmBtn = (Button)findViewById(R.id.TTconfirmButton);
+        confirmBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                //goes to a classic tournament- round robin + single-KO
+                if(type==type.CLASSIC){
+
+                }
+                //goes to a single-KO stype tourney
+                else if(type==type.QUICKPLAY){
+
+                }
+                //goes to a double-KO stype tourney
+                else if (type==type.DOUBLEELIMINATION){
+
+                }
+
+                //receiving the updates
+                //notifyDataSetChanged();
+            }
+        });
 
         CustomAdapter customAdapter=new CustomAdapter(getApplicationContext(),types);
         options.setAdapter(customAdapter);
