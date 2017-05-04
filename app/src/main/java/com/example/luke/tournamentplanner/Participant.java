@@ -9,18 +9,29 @@ import android.os.Parcelable;
  */
 
 public class Participant implements Parcelable{
-    private int pointsFor, pointsAgainst;
+    private int pointsFor, pointsAgainst, wins, loses;
     private String name;
 
     public Participant(String name){
         this.name = name;
         pointsFor = 0;
         pointsAgainst = 0;
+        wins = 0;
+        loses = 0;
     }
 
     public  void setScore(int pointsFor, int pointsAgainst){
         this.pointsFor += pointsFor;
         this.pointsAgainst += pointsAgainst;
+    }
+
+    public void setWins(int game){
+        if(game == 0){
+            loses++;
+        }
+        else{
+            wins++;
+        }
     }
 
     public void setName(String name){
