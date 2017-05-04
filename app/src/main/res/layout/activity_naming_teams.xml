@@ -39,7 +39,7 @@
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true"
         android:layout_below="@+id/name"
-        android:layout_above="@+id/next"/>
+        android:layout_above="@+id/confirmButton"/>
 
     <EditText
         android:id="@+id/name"
@@ -55,24 +55,15 @@
         android:layout_alignParentStart="true" />
 
     <Button
-        android:text="Continue"
+        android:text="Confirm Teams"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:id="@+id/next"
         android:layout_alignParentBottom="true"
         android:layout_centerHorizontal="true"
-        android:elevation="12dp" />
-<!--=======-->
-        <!--android:text="Confirm Teams"-->
-        <!--android:layout_width="wrap_content"-->
-        <!--android:layout_height="wrap_content"-->
-        <!--android:layout_alignParentBottom="true"-->
-        <!--android:layout_centerHorizontal="true"-->
-        <!--android:id="@+id/confirmButton"-->
-        <!--android:textColor="@android:color/background_light"-->
-        <!--android:background="@android:color/holo_green_light"-->
-        <!--android:padding="10dp" />-->
-<!--&gt;>>>>>> 7a01b868f1f146799634ded846f0c281ef9c5f4b-->
+        android:id="@+id/confirmButton"
+        android:textColor="@android:color/background_light"
+        android:background="@android:color/holo_green_light"
+        android:padding="10dp" />
 
 
 </RelativeLayout>
