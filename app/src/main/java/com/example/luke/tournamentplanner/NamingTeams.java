@@ -1,6 +1,5 @@
 package com.example.luke.tournamentplanner;
 
-import android.app.ListActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
@@ -10,18 +9,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.inputmethod.EditorInfo;
-import android.widget.Adapter;
-import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.ListView;
 import android.widget.TextView;
 import android.widget.Toast;
 
 import java.util.ArrayList;
-import java.util.List;
 
 public class NamingTeams extends AppCompatActivity {
 
@@ -85,6 +80,7 @@ public class NamingTeams extends AppCompatActivity {
                 }
                 else{
                     Intent intent = new Intent(NamingTeams.this, bracket.class);
+                    intent.putExtra("Tournament_Teams", teams);
                     startActivity(intent);
                 }
 
@@ -95,8 +91,6 @@ public class NamingTeams extends AppCompatActivity {
 
 
 
-//>>>>>>> 7a01b868f1f146799634ded846f0c281ef9c5f4b
-        //need to send the list of teams participating to the tournament scheduler
         
     }
 
@@ -116,7 +110,7 @@ public class NamingTeams extends AppCompatActivity {
             Participant player = getItem(position);
             // Check if an existing view is being reused, otherwise inflate the view
             if (convertView == null) {
-                convertView = LayoutInflater.from(getContext()).inflate(R.layout.item_user, parent, false);
+                convertView = LayoutInflater.from(getContext()).inflate(R.layout.custom_participant_listview, parent, false);
             }
             //getting the name form the editText and initializing it to the textVIew
             TextView teamName = (TextView) convertView.findViewById(R.id.name);
