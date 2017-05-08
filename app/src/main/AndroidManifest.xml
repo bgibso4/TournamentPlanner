@@ -33,6 +33,7 @@
                 android:name="android.support."
                 android:value=".MainActivity" />
         </activity>
+        <activity android:name=".QuickPlay"></activity>
     </application>
 
 </manifest>

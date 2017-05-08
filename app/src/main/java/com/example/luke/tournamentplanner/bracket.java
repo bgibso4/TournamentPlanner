@@ -29,7 +29,7 @@ public class bracket extends AppCompatActivity implements AdapterView.OnItemSele
         setContentView(R.layout.activity_bracket);
 
         Intent intent = getIntent();
-        ArrayList<Participant> teams = intent.getExtras().getParcelableArrayList("Tournament_Teams");
+        final ArrayList<Participant> teams = intent.getExtras().getParcelableArrayList("Tournament_Teams");
 
         options = (Spinner) findViewById(R.id.options);
         options.setOnItemSelectedListener(this);
@@ -47,6 +47,10 @@ public class bracket extends AppCompatActivity implements AdapterView.OnItemSele
                 }
                 //goes to a single-KO stype tourney
                 else if(type==type.QUICKPLAY){
+                    Intent intent = new Intent(bracket.this, QuickPlay.class);
+                    intent.putExtra("Round Number", 1);
+                    intent.putExtra("Tournament_Teams", teams);
+                    startActivity(intent);
 
                 }
                 //goes to a double-KO stype tourney
@@ -67,10 +71,10 @@ public class bracket extends AppCompatActivity implements AdapterView.OnItemSele
     @Override
     public void onItemSelected(AdapterView<?> adapterView, View view, int i, long l) {
         Toast.makeText(getApplicationContext(), types[i], Toast.LENGTH_LONG).show();
-        if(types[i]=="Classic"){
+        if(types[i].equals("Classic")){
             type = Type.CLASSIC;
         }
-        else if(types[i] == "QuickPlay"){
+        else if(types[i].equals("QuickPlay")){
             type = Type.QUICKPLAY;
         }
         else{
